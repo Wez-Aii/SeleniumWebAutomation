@@ -12,7 +12,7 @@ WEBSITE_URL = os.getenv("WEBSITE", "www.google.com")
 USERNAME = os.getenv("USERNAME")
 PASSWORD = os.getenv("PASSWORD")
 
-X_Y_COORDINATE_POINTS = [
+FACTORIES_COORDINATE_POINTS = [
                 (-220,-200),(-140,-200),(-60,-200),(20,-200),(100,-200),(180,-200),
                 (-240,-120),(-160,-120),(-80,-120),(0,-120),(80,-120),(160,-120),(240,-120),
                 (-220,-40),(-140,-40),(-60,-40),(20,-40),(100,-40),(180,-40),
@@ -88,7 +88,7 @@ class CustomWebAutomation(SeleniumRemoteWebAutomation):
         self._username = username
         self._password = password
         self._website_url = website_url
-        self._x_y_coordinate_points = X_Y_COORDINATE_POINTS
+        self._factories_coordinate_points = FACTORIES_COORDINATE_POINTS
 
     async def login(self):
         try:
@@ -197,8 +197,8 @@ class CustomWebAutomation(SeleniumRemoteWebAutomation):
             # _map_divs = self.driver.find_elements(By.XPATH, "//div[@aria-label='Map']")
             _map_divs = self.driver.find_elements(By.XPATH, "//div[@class='mapdiv']")
             if len(_map_divs) > 0:
-                # _x_coordinate = self._x_y_coordinate_points[index][0]
-                # _y_coordinate = self._x_y_coordinate_points[index][1]
+                # _x_coordinate = self._factories_coordinate_points[index][0]
+                # _y_coordinate = self._factories_coordinate_points[index][1]
                 _x_coordinate = 0
                 _y_coordinate = 0
                 self.coordinates_target_click_in_element(target_element=_map_icons[-1].find_element(By.XPATH, "//iframe[@aria-hidden='true']"), x_coordinate=_x_coordinate, y_coordinate=_y_coordinate)
@@ -212,8 +212,8 @@ class CustomWebAutomation(SeleniumRemoteWebAutomation):
             #     # _map_divs = self.driver.find_elements(By.XPATH, "//div[@aria-label='Map']")
             #     _map_divs = self.driver.find_elements(By.XPATH, "//div[@class='mapdiv']")
             #     if len(_map_divs) > 0:
-            #         _x_coordinate = self._x_y_coordinate_points[i][0]
-            #         _y_coordinate = self._x_y_coordinate_points[i][1]
+            #         _x_coordinate = self._factories_coordinate_points[i][0]
+            #         _y_coordinate = self._factories_coordinate_points[i][1]
             #         self.coordinates_target_click_in_element(target_element=_map_icons[-1].find_element(By.XPATH, "//iframe[@aria-hidden='true']"), x_coordinate=_x_coordinate, y_coordinate=_y_coordinate)
             #         time.sleep(2)
             #     # await self.back_to_prevpage()
