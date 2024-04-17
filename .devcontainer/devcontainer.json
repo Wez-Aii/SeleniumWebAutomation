@@ -12,10 +12,11 @@
       ]
     }
   },
-  // "runArgs": ["--network", "host"],
-  // "privileged": true,
+  "runArgs": ["--env-file", "/home/wezaii/Development/PreDevTesting/SeleniumWebAutomation/.devcontainer/.env"],
+  "privileged": true,
   "workspaceFolder": "/workspace",
-  "workspaceMount": "source=${localEnv:USERPROFILE}\\TestingProject\\SeleniumWebAutomation,target=/workspace,type=bind",
+  // "workspaceMount": "source=${localEnv:USERPROFILE}\\TestingProject\\SeleniumWebAutomation,target=/workspace,type=bind",
+  "workspaceMount": "source=/home/wezaii/Development/PreDevTesting/SeleniumWebAutomation,target=/workspace,type=bind",
   // "postStartCommand": "tail -f /dev/null",
   "postCreateCommand": "pip3 install -r /workspace/requirements.txt"
 }
