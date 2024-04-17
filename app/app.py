@@ -84,7 +84,6 @@ class SeleniumRemoteWebAutomation:
 class CustomWebAutomation(SeleniumRemoteWebAutomation):
     def __init__(self, web_driver_type, remote_url, website_url, username, password):
         super().__init__(web_driver_type, remote_url)
-        self._website_url = website_url
         self._username = username
         self._password = password
         self._website_url = website_url
